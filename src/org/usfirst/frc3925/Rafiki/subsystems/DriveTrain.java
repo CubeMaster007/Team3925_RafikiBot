@@ -36,6 +36,10 @@ public class DriveTrain extends Subsystem {
     	robotDrive.setLeftRightMotorOutputs(left, right);
     }
     
+    public void inception (String s) {
+    	inception("This is trippy yo " + s);
+    }
+    
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
