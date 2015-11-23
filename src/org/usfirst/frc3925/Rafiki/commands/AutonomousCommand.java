@@ -12,7 +12,6 @@
 package org.usfirst.frc3925.Rafiki.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc3925.Rafiki.Robot;
 
 /**
  *
