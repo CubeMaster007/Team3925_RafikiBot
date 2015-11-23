@@ -15,7 +15,7 @@ public class XboxHelper {
 	}
 	
 	public static final int
-	A = 1,
+	A = 1, //TODO Check pors
 	B = 2,
 	X = 3,
 	Y = 4,
@@ -29,7 +29,9 @@ public class XboxHelper {
 	AXIS_LEFT_X = 1,
 	AXIS_LEFT_Y = 2,
 	AXIS_RIGHT_X = 3,
-	AXIS_RIGHT_Y = 4;
+	AXIS_RIGHT_Y = 4,
+	TRIGGER_LEFT = 5,
+	TRIGGER_RIGHT = 6;
 	
 	
 	private static Map<CurrentXbox, Joystick> controllers = new HashMap<>();
@@ -45,6 +47,10 @@ public class XboxHelper {
 	
 	public static double getButton(CurrentXbox xbox, int button) {
 		return controllers.get(xbox).getRawAxis(button);
+	}
+	
+	public static double getPOV(CurrentXbox xbox) {
+		return controllers.get(xbox).getPOV();
 	}
 	
 }
