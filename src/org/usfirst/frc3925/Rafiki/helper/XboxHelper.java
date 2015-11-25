@@ -15,21 +15,21 @@ public class XboxHelper {
 	}
 	
 	public static final int
-	A = 1, //TODO Check pors
+	A = 1,
 	B = 2,
 	X = 3,
 	Y = 4,
 	TRIGGER_LT = 5,
 	TRIGGER_RT = 6,
-	START = 7,
-	BACK = 8,
+	BACK = 7,
+	START = 8,
 	STICK_LEFT = 9,
 	STICK_RIGHT = 10,
 	
-	AXIS_LEFT_X = 1,
-	AXIS_LEFT_Y = 2,
-	AXIS_RIGHT_X = 3,
-	AXIS_RIGHT_Y = 4,
+	AXIS_LEFT_Y = 1,
+	AXIS_LEFT_X = 2,
+	AXIS_RIGHT_Y = 3,
+	AXIS_RIGHT_X = 4,
 	TRIGGER_LEFT = 5,
 	TRIGGER_RIGHT = 6;
 	
