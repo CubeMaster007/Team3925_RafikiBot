@@ -12,10 +12,11 @@
 package org.usfirst.frc3925.Rafiki.subsystems;
 
 import org.usfirst.frc3925.Rafiki.RobotMap;
-import org.usfirst.frc3925.Rafiki.commands.*;
+import org.usfirst.frc3925.Rafiki.commands.IntakeControl;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
