@@ -36,11 +36,15 @@ public class Intake extends Subsystem {
     	OPEN, CLOSED;
     }
     
+    /**
+     * positive = pull in, negative = push out
+     * @param speed  speed of motors
+     */
     public void setRawSpeeds(double speed) {
     	upperLeft.set(speed); //TODO Check directions
-    	upperRight.set(speed);
-    	lowerLeft.set(speed);
-    	lowerRight.set(speed);
+    	upperRight.set(-speed);
+    	lowerLeft.set(-speed);
+    	lowerRight.set(-speed);
     }
     
     public void run() {

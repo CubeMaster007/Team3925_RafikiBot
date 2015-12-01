@@ -30,8 +30,8 @@ public class XboxHelper {
 	AXIS_LEFT_X = 2,
 	AXIS_RIGHT_Y = 3,
 	AXIS_RIGHT_X = 4,
-	TRIGGER_LEFT = 5,
-	TRIGGER_RIGHT = 6;
+	AXIS_TRIGGER_LEFT = 5,
+	AXIS_TRIGGER_RIGHT = 6;
 	
 	
 	private static Map<CurrentXbox, Joystick> controllers = new HashMap<>();
@@ -45,8 +45,8 @@ public class XboxHelper {
 		return Math.abs(controllers.get(xbox).getRawAxis(axis)) > Constants.XBOX_AXIS_TOLERANCE ? controllers.get(xbox).getRawAxis(axis) : 0;
 	}
 	
-	public static double getButton(CurrentXbox xbox, int button) {
-		return controllers.get(xbox).getRawAxis(button);
+	public static boolean getButton(CurrentXbox xbox, int button) {
+		return controllers.get(xbox).getRawButton(button);
 	}
 	
 	public static double getPOV(CurrentXbox xbox) {

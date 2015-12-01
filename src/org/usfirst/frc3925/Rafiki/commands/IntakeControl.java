@@ -11,14 +11,22 @@
 
 package org.usfirst.frc3925.Rafiki.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc3925.Rafiki.Robot;
+import org.usfirst.frc3925.Rafiki.helper.XboxHelper;
+import org.usfirst.frc3925.Rafiki.helper.XboxHelper.CurrentXbox;
+import org.usfirst.frc3925.Rafiki.subsystems.Intake;
+import org.usfirst.frc3925.Rafiki.subsystems.Intake.IntakeState;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
 public class  IntakeControl extends Command {
-
+	Intake intake = Robot.intake;
+	
+	double intakeSpeeds = 0;
+	
     public IntakeControl() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -30,10 +38,32 @@ public class  IntakeControl extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	intake.setState(IntakeState.OPEN);
+    	intake.setRawSpeeds(0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
+    	if (XboxHelper.getButton(CurrentXbox.SHOOTER, XboxHelper.TRIGGER_RT)) {
+			intake.setState(IntakeState.OPEN);
+		}
+    	if (XboxHelper.getButton(CurrentXbox.SHOOTER, XboxHelper.TRIGGER_LT)) {
+    		intake.setState(IntakeState.CLOSED);
+    	}
+    	
+    	double axisLeft = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_RIGHT);
+    	double axisRight = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_RIGHT);
+    	
+    	if (axisLeft > 0) {
+			intakeSpeeds = 1;
+		} else if (axisRight > 0) {
+			intakeSpeeds = -1;
+		} else if (axisLeft > 0 && axisRight > 0) {
+			intakeSpeeds = 0;
+		}
+    	
+    	intake.setRawSpeeds(intakeSpeeds);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -43,10 +73,14 @@ public class  IntakeControl extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	intake.setState(IntakeState.OPEN);
+    	intake.setRawSpeeds(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	intake.setState(IntakeState.OPEN);
+    	intake.setRawSpeeds(0);
     }
 }
