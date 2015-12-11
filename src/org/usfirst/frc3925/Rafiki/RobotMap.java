@@ -16,6 +16,7 @@ import org.usfirst.frc3925.Rafiki.subsystems.Elevator;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
@@ -81,11 +82,11 @@ public class RobotMap {
         elevatorEncoderElevator.setPIDSourceParameter(PIDSourceParameter.kRate);
         elevatorMotorElevatorA = new Talon(2);
         LiveWindow.addActuator("Elevator", "MotorElevatorA", (Talon) elevatorMotorElevatorA);
-        
-/*      elevatorElevatorPID = new PIDController(1.0, 0.0, 0.0, 0.0, elevatorEncoderElevator, elevatorMotorElevatorA, 0.02);
+/*        
+      	elevatorElevatorPID = new PIDController(1.0, 0.0, 0.0, 0.0, elevatorEncoderElevator, elevatorMotorElevatorA, 0.02);
         LiveWindow.addActuator("Elevator", "ElevatorPID", elevatorElevatorPID);
         elevatorElevatorPID.setContinuous(false); elevatorElevatorPID.setAbsoluteTolerance(0.2); 
-        elevatorElevatorPID.setOutputRange(-1.0, 1.0);        */
+        elevatorElevatorPID.setOutputRange(-1.0, 1.0);        //*/
 
         elevatorMotorElevatorB = new Talon(3);
         LiveWindow.addActuator("Elevator", "MotorElevatorB", (Talon) elevatorMotorElevatorB);
@@ -119,5 +120,6 @@ public class RobotMap {
     	LiveWindow.addActuator("Elevator", "ElevatorPID", elevatorElevatorPID);
     	elevatorElevatorPID.setContinuous(false); elevatorElevatorPID.setAbsoluteTolerance(0.2); 
     	elevatorElevatorPID.setOutputRange(-1.0, 1.0);
+    	DriverStation.reportError("Success Making Elevator PID\n", false);
     }
 }

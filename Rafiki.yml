@@ -401,7 +401,7 @@ Children:
         default: 1
         name: Number
         validators: &id019 [Joystick]
-        value: '0'
+        value: '1'
     Base: Joystick
     Name: Shooter
   - Children: []
@@ -411,7 +411,7 @@ Children:
         default: 1
         name: Number
         validators: *id019
-        value: '1'
+        value: '0'
     Base: Joystick
     Name: Driver
   Properties: {}
@@ -454,9 +454,8 @@ Children:
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Adam
-      C\workspace', extension: null, folder: true, name: Eclipse Workspace, validators: null,
-    value: 'C:\Users\Adam C\Desktop\Code\FRC Programming Team\Workspace'}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: /Users/bryan/workspace,
+    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: /Users/bryan/FRC_Workspace}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,

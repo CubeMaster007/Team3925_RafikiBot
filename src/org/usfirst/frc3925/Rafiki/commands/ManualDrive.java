@@ -12,7 +12,10 @@
 package org.usfirst.frc3925.Rafiki.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc3925.Rafiki.Robot;
+import org.usfirst.frc3925.Rafiki.helper.XboxHelper;
+import org.usfirst.frc3925.Rafiki.helper.XboxHelper.CurrentXbox;
 
 /**
  *
@@ -34,6 +37,8 @@ public class  ManualDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.driveTrain.arcadeDrive(XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_LEFT_Y),
+    			XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_RIGHT_X), true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -43,10 +48,12 @@ public class  ManualDrive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.driveTrain.setRawSpeed(0, 0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.driveTrain.setRawSpeed(0, 0);
     }
 }

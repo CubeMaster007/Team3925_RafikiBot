@@ -52,7 +52,7 @@ public class  IntakeControl extends Command {
     		intake.setState(IntakeState.CLOSED);
     	}
     	
-    	double axisLeft = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_RIGHT);
+    	double axisLeft = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_LEFT);
     	double axisRight = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_RIGHT);
     	
     	if (axisLeft > 0) {
