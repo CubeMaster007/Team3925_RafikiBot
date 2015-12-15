@@ -147,6 +147,11 @@ public class Elevator extends Subsystem {
 		SmartDashboard.putNumber("RawPIDOutputElevator", pIDOutputRaw);
 		
 		SmartDashboard.getBoolean("Zeroed", zeroed);
+		if (elevatorPID == null) {
+			DriverStation.reportError("NO ELEVATOR PID CONTROLLER!", false);
+		} else {
+			SmartDashboard.putBoolean("PIDEnabled", elevatorPID.isEnable());
+		}
 	}
 
 	public PIDOutput getpIDOutputRaw() {
@@ -154,7 +159,7 @@ public class Elevator extends Subsystem {
 	}
 	
 	public void initPID() {
-//		elevatorPID.enable();
+		elevatorPID.enable();
 	}
 
 	public void initDefaultCommand() {

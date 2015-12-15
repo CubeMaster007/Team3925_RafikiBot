@@ -11,7 +11,9 @@
 
 package org.usfirst.frc3925.Rafiki.commands;
 
+import edu.wpi.first.wpilibj.Joystick.RumbleType;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3925.Rafiki.Robot;
 import org.usfirst.frc3925.Rafiki.helper.XboxHelper;
@@ -39,6 +41,17 @@ public class  ManualDrive extends Command {
     protected void execute() {
     	Robot.driveTrain.arcadeDrive(XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_LEFT_Y),
     			XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_RIGHT_X), true);
+    	
+    	SmartDashboard.putNumber("JoystickLeftY", XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_LEFT_Y));
+    	SmartDashboard.putNumber("JoystickRightX", XboxHelper.getAxis(CurrentXbox.DRIVER, XboxHelper.AXIS_RIGHT_X));
+    	
+    	SmartDashboard.putNumber("JoystickLeftY_RAW", Robot.oi.driver.getRawAxis(XboxHelper.AXIS_LEFT_Y));
+    	SmartDashboard.putNumber("JoystickRightX_RAW", Robot.oi.driver.getRawAxis(XboxHelper.AXIS_RIGHT_X));
+    	
+    	
+		Robot.oi.driver.setRumble(RumbleType.kRightRumble, 0);
+		Robot.oi.driver.setRumble(RumbleType.kLeftRumble, 0);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -49,11 +62,15 @@ public class  ManualDrive extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.driveTrain.setRawSpeed(0, 0);
+    	
+    	Robot.oi.driver.setRumble(RumbleType.kRightRumble, 0);
+    	Robot.oi.driver.setRumble(RumbleType.kLeftRumble, 0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	Robot.driveTrain.setRawSpeed(0, 0);
+    	
     }
 }

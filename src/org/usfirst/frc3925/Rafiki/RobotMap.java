@@ -78,7 +78,7 @@ public class RobotMap {
         driveTrainEncoderLeft.setPIDSourceParameter(PIDSourceParameter.kRate);
         elevatorEncoderElevator = new Encoder(4, 5, false, EncodingType.k4X);
         LiveWindow.addSensor("Elevator", "EncoderElevator", elevatorEncoderElevator);
-        elevatorEncoderElevator.setDistancePerPulse(1.0);
+        elevatorEncoderElevator.setDistancePerPulse(4.25/2048);
         elevatorEncoderElevator.setPIDSourceParameter(PIDSourceParameter.kRate);
         elevatorMotorElevatorA = new Talon(2);
         LiveWindow.addActuator("Elevator", "MotorElevatorA", (Talon) elevatorMotorElevatorA);

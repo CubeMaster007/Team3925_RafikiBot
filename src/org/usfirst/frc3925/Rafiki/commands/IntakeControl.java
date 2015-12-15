@@ -56,13 +56,14 @@ public class  IntakeControl extends Command {
     	double axisRight = XboxHelper.getAxis(CurrentXbox.SHOOTER, XboxHelper.AXIS_TRIGGER_RIGHT);
     	
     	if (axisLeft > 0) {
-			intakeSpeeds = 1;
+			intakeSpeeds = axisLeft;
 		} else if (axisRight > 0) {
-			intakeSpeeds = -1;
+			intakeSpeeds = -axisRight;
 		} else if (axisLeft > 0 && axisRight > 0) {
 			intakeSpeeds = 0;
 		}
     	
+    	intake.run();
     	intake.setRawSpeeds(intakeSpeeds);
     }
 

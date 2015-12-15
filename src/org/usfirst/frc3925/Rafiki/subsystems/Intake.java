@@ -49,13 +49,13 @@ public class Intake extends Subsystem {
     
     public void run() {
     	switch (state) {
-		case OPEN:
+    	case OPEN:
+    		solenoidLeft.set(Value.kReverse);
+    		solenoidRight.set(Value.kReverse);
+    		break;
+		case CLOSED:
 			solenoidLeft.set(Value.kForward);
 			solenoidRight.set(Value.kForward);
-			break;
-		case CLOSED:
-			solenoidLeft.set(Value.kReverse);
-			solenoidRight.set(Value.kReverse);
 			break;
 
 		default:

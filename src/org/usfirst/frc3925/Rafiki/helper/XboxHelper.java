@@ -25,7 +25,7 @@ public class XboxHelper {
 	START = 8,
 	STICK_LEFT = 9,
 	STICK_RIGHT = 10,
-	
+	// 1, 0, 5, 4, 2, 3
 	AXIS_LEFT_Y = 1,
 	AXIS_LEFT_X = 2,
 	AXIS_RIGHT_Y = 3,
