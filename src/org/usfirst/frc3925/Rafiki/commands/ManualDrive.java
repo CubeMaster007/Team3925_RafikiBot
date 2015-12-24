@@ -14,8 +14,8 @@ package org.usfirst.frc3925.Rafiki.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc3925.Rafiki.Robot;
-import org.usfirst.frc3925.Rafiki.helper.XboxHelper;
-import org.usfirst.frc3925.Rafiki.helper.XboxHelper.CurrentXbox;
+import org.usfirst.frc3925.Rafiki.util.XboxHelper;
+import org.usfirst.frc3925.Rafiki.util.XboxHelper.CurrentXbox;
 
 /**
  *
