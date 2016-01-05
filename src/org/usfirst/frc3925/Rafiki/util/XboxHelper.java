@@ -1,4 +1,4 @@
-package org.usfirst.frc3925.Rafiki.helper;
+package org.usfirst.frc3925.Rafiki.util;
 
 import java.util.HashMap;
 import java.util.Map;

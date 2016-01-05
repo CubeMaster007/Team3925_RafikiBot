@@ -12,10 +12,10 @@
 package org.usfirst.frc3925.Rafiki.commands;
 
 import org.usfirst.frc3925.Rafiki.Robot;
-import org.usfirst.frc3925.Rafiki.helper.XboxHelper;
-import org.usfirst.frc3925.Rafiki.helper.XboxHelper.CurrentXbox;
 import org.usfirst.frc3925.Rafiki.subsystems.Intake;
 import org.usfirst.frc3925.Rafiki.subsystems.Intake.IntakeState;
+import org.usfirst.frc3925.Rafiki.util.XboxHelper;
+import org.usfirst.frc3925.Rafiki.util.XboxHelper.CurrentXbox;
 
 import edu.wpi.first.wpilibj.command.Command;
 

@@ -116,7 +116,7 @@ public class RobotMap {
     }
     
     public static void initPIDElevator(Elevator elevator) {
-    	elevatorElevatorPID = new PIDController(1.0, 0.0, 0.0, 0.0, elevatorEncoderElevator, elevator.getpIDOutputRaw(), 0.02);
+    	elevatorElevatorPID = new PIDController(1.0, 0.0, 0.0, 0.0, elevatorEncoderElevator, elevator, 0.02);
     	LiveWindow.addActuator("Elevator", "ElevatorPID", elevatorElevatorPID);
     	elevatorElevatorPID.setContinuous(false); elevatorElevatorPID.setAbsoluteTolerance(0.2); 
     	elevatorElevatorPID.setOutputRange(-1.0, 1.0);
