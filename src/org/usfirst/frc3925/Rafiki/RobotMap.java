@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDController;
-import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -71,15 +71,15 @@ public class RobotMap {
         driveTrainEncoderRight = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "EncoderRight", driveTrainEncoderRight);
         driveTrainEncoderRight.setDistancePerPulse(1.0);
-        driveTrainEncoderRight.setPIDSourceParameter(PIDSourceParameter.kRate);
+        driveTrainEncoderRight.setPIDSourceType(PIDSourceType.kRate);
         driveTrainEncoderLeft = new Encoder(0, 1, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "EncoderLeft", driveTrainEncoderLeft);
         driveTrainEncoderLeft.setDistancePerPulse(1.0);
-        driveTrainEncoderLeft.setPIDSourceParameter(PIDSourceParameter.kRate);
+        driveTrainEncoderLeft.setPIDSourceType(PIDSourceType.kRate);
         elevatorEncoderElevator = new Encoder(4, 5, false, EncodingType.k4X);
         LiveWindow.addSensor("Elevator", "EncoderElevator", elevatorEncoderElevator);
         elevatorEncoderElevator.setDistancePerPulse(1.0);
-        elevatorEncoderElevator.setPIDSourceParameter(PIDSourceParameter.kRate);
+        elevatorEncoderElevator.setPIDSourceType(PIDSourceType.kRate);
         elevatorMotorElevatorA = new Talon(2);
         LiveWindow.addActuator("Elevator", "MotorElevatorA", (Talon) elevatorMotorElevatorA);
 /*        
